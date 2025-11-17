@@ -1,25 +1,47 @@
+import { Container } from "./components/Container";
+import { CountDown } from "./components/CountDown";
+import { DefaultInput } from "./components/DefaultInput";
+import { Logo } from "./components/Logo";
+import { Menu } from "./components/Menu";
+import "./styles/global.css";
+import "./styles/theme.css";
 
-import { Container } from './components/Container'
-import { Heading } from './components/Heading'
-import { Logo } from './components/Logo'
-import './styles/global.css'
-import './styles/theme.css'
-
-export function App(){
-    console.log("Oie")
-    return (
+export function App() {
+  console.log("Oie");
+  return (
     <>
-        <Container><Logo/></Container>
-        <Container>
-            <Heading>Menu</Heading>
-        </Container>
-        <Container>
-            <Heading>Form</Heading>
-        </Container>
-        
-        
+      <Container>
+        <Logo />
+      </Container>
+      <Container>
+        <Menu />
+      </Container>
+      <Container>
+        <CountDown />
+      </Container>
+      <Container>
+        <form className="form">
+          <div className="formRow">
+            <DefaultInput
+              id="meuInput"
+              type="text"
+              labelText="Task"
+              placeholder="Digite algo"
+            />
+          </div>
+
+          <div className="formRow">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="formRow">
+            <p>Ciclos</p>
+            <p>0 0 0 0 0</p>
+          </div>
+          <div className="formRow">
+            <button>teste</button>
+          </div>
+        </form>
+      </Container>
     </>
-
-    )
+  );
 }
-
