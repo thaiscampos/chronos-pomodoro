@@ -8,6 +8,7 @@ import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
 import "./styles/global.css";
 import "./styles/theme.css";
+import { Footer } from "./components/Footer";
 
 export function App() {
   console.log("Oie");
@@ -44,6 +45,9 @@ export function App() {
             <DefaultButton icon={<StopCircleIcon />} color="red" />
           </div>
         </form>
+      </Container>
+      <Container>
+        <Footer />
       </Container>
     </>
   );
