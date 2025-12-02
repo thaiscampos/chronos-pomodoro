@@ -16,18 +16,3 @@ body {
   color: var(--text-default);
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.formRow {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  align-items: center;
-  justify-content: center;
-}

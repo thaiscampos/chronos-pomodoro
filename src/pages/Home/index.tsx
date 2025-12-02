@@ -1,0 +1,25 @@
+
+
+import { Container } from "../../components/Container";
+import { CountDown } from "../../components/CountDown";
+import { MainForm } from "../../MainForm";
+import { MainTemplate } from "../../templates/MainTemplate";
+
+
+export function Home() {
+  console.log("Oie");
+  return (
+   
+     <MainTemplate>
+        <Container>
+                <CountDown />
+              </Container>
+
+              <Container>
+                <MainForm/>
+              </Container>
+              
+     </MainTemplate>
+   
+  );
+}
