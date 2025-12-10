@@ -2,12 +2,14 @@ import "./styles/global.css";
 import "./styles/theme.css";
 
 import { Home } from "./pages/Home";
-import { TaskContext } from "./contexts/TaskContext";
+import { TaskContextProvider } from "./contexts/TaskContext";
 
 export function App() {
+  
   return (
-    <TaskContext.Provider value={valu: 'faf'}>
+      <TaskContextProvider>
       <Home />
-    </TaskContext.Provider>
+      </TaskContextProvider>
+    
   );
 }
