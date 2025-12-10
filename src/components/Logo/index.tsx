@@ -2,7 +2,7 @@ import { TimerIcon } from "lucide-react";
 import styles from "./styles.module.css";
 
 export function Logo() {
-  console.log(styles);
+  //console.log(styles);
   //const {children} = props;
   return (
     <div className={styles.logo}>
