@@ -1,29 +1,31 @@
-import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import { PlayCircleIcon } from "lucide-react";
 import { DefaultInput } from "../components/DefaultInput";
 import styles from "./styles.module.css";
 import { DefaultButton } from "../components/DefaultButton/DefaultButton";
 import { Cycles } from "../components/Cycles";
-import { useTaskContext } from "../contexts/TaskContext";
+import { useState } from "react";
+
 
 export function MainForm() {
-  const {setState} = useTaskContext();
-  function handleClick(){
-    setState(prevState=>{
-      return{
-        ...prevState,
-        formattedSecondsRemaning: '21:00'
-      }
-    })
+
+  function handleNewTask(event: React.FormEvent<HTMLFormElement>){
+    event.preventDefault()
+    console.log('enviado: ' + taskName)
   }
+
+  const [taskName, setTaskName] = useState('')
+ 
   return (
-    <form className={styles.form}>
-      <button type="button" onClick={handleClick}>Clicar</button>
+    <form onSubmit={ handleNewTask} className={styles.form}>
+     
       <div className={styles.formRow}>
         <DefaultInput
           id="meuInput"
           type="text"
           labelText="Task"
           placeholder="Digite algo"
+          value={taskName}
+          onChange={(e)=> setTaskName(e.target.value)}
         />
       </div>
 
@@ -35,7 +37,7 @@ export function MainForm() {
       </div>
       <div className={styles.formRow}>
         <DefaultButton icon={<PlayCircleIcon />} />
-        <DefaultButton icon={<StopCircleIcon />} color="red" />
+        
       </div>
     </form>
   );
